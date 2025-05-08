@@ -1,0 +1,40 @@
+/* API key gg cloud: AIzaSyCv6J1WSzj-XzNdopPBgFmrgTpGm3w4o1s */
+#map {
+    height: 600px;
+    margin-top: 10px;
+  }
+#toggleBtn {
+    padding: 8px 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+#toggleBtn:active {
+    opacity: 0.5;
+}
+
+#confirmBtn {
+    padding: 8px 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#confirmBtn:active {
+  opacity: 0.5;
+}
+
+#deleteBtn {
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#deleteBtn:active {
+  opacity: 0.5;
+}
