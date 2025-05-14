@@ -123,3 +123,31 @@ deleteBtn.addEventListener('click', () => {
   document.getElementById('status2').innerText = '';
   document.getElementById('status3').innerText = '';
 });
+
+const yellowIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-yellow.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+let firebaseMarker = null;
+
+db.ref("Toa-do-hien-tai").on("value", (snapshot) => {
+  const data = snapshot.val();
+  if (data && data.lat_cur && data.lng_cur) {
+    const lat = data.lat_cur;
+    const lng = data.lng_cur;
+
+    if (firebaseMarker) {
+      map.removeLayer(firebaseMarker);
+    }
+
+    firebaseMarker = L.marker([lat, lng], { icon: yellowIcon })
+      .addTo(map)
+      .bindPopup("Marker từ Firebase")
+      .openPopup();
+  }
+});
